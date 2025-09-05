@@ -1636,3 +1636,17 @@ body {
     color: var(--primary-color);
 }
 
+
+
+.footer-email {
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.footer-email:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+
