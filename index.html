@@ -41,19 +41,15 @@
                     </button>
                 </div>
 
-                <div class="mobile-menu-toggle">
+                <div class="mobile-menu-toggle" aria-label="Abrir menu mobile">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
                 <div class="header-actions">
-                    <a href="https://wa.me/5511988527514" class="whatsapp-icon" target="_blank" title="WhatsApp">
+                    <a href="https://wa.me/5511973497047" class="whatsapp-icon" target="_blank" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <div class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </div>
                 </div>
             </div>
         </nav>
@@ -87,25 +83,70 @@
                 <div class="hero-cta">
                     <button class="cta-btn primary cpf-action">
                         <i class="fas fa-shopping-cart"></i>
-                        Comprar Agora
+                        Comprar (CPF)
                     </button>
                     <button class="cta-btn secondary cnpj-action" style="display: none;">
                         <i class="fas fa-calculator"></i>
-                        Solicitar Orçamento
+                        Orçar (CNPJ)
                     </button>
-                    <button class="cta-btn outline">
+                    <a href="https://wa.me/5511973497047" class="cta-btn outline" target="_blank">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp
-                    </button>
+                    </a>
                 </div>
             </div>
+
+            <!-- HERO IMAGE SHOWCASE (corrigido: flex em vez de absolute) -->
             <div class="hero-image">
                 <div class="mousepad-showcase">
                     <div class="mousepad mousepad-1">
                         <img src="imagens/24-20.jpg" alt="Mousepad 22x20cm" class="mousepad-img">
                     </div>
                     <div class="mousepad mousepad-2">
-                        <img src="imagens/MP BRANCO M.png" alt="Mousepad Branco" class="mousepad-img">
+                        <img src="imagens/6.png" alt="Mousepad Branco" class="mousepad-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Veja Como Nossos Mousepads São Feitos</h2>
+                <p>Conheça nosso processo de produção e alguns dos nossos modelos</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- embed correto do YouTube (formatado para iframe embed) -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/btFDjQlSrdk" 
+                        title="PersonaPad - Processo de Fabricação" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="video-info">
+                    <div class="video-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-cogs"></i>
+                            <h4>Processo Artesanal</h4>
+                            <p>Cada mousepad é produzido com cuidado e atenção aos detalhes</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-palette"></i>
+                            <h4>Personalização Total</h4>
+                            <p>Veja como transformamos sua arte em um produto único</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-award"></i>
+                            <h4>Qualidade Premium</h4>
+                            <p>Materiais de primeira linha e acabamento profissional</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,6 +207,13 @@
                             <p>Acabamento perfeito e durabilidade garantida</p>
                         </div>
                     </div>
+                    <div class="equipamento">
+                        <i class="fas fa-cut"></i>
+                        <div>
+                            <h4>Máquina de Corte a Laser 100W</h4>
+                            <p>Corte especial e exclusivo em contornos personalizados</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,84 +223,62 @@
     <section id="produtos" class="section produtos">
         <div class="container">
             <div class="section-header">
-                <h2>Nossos Produtos</h2>
+                <h2>Nossas Linhas</h2>
                 <p>Mousepads profissionais para todas as necessidades</p>
             </div>
             
             <div class="produtos-grid">
-                <div class="produto-card" data-product-id="mousepad-22x20" data-price="15.90">
+                <div class="produto-card" data-product-id="linha-personalizados">
                     <div class="produto-image">
-                        <img src="imagens/24-20.jpg" alt="Mousepad 22x20cm" class="produto-img">
+                        <img src="imagens/18.png" alt="Linha Personalizados" class="produto-img">
                     </div>
                     <div class="produto-info">
-                        <h3>Mousepad 22 x 20 cm</h3>
-                        <p>Ideal para espalhar a sua marca no mercado dando de brinde ou montando um kit</p>
+                        <h3>Linha Personalizados</h3>
+                        <p>Corte a laser + estampa total personalizada</p>
                         <ul class="produto-features">
-                            <li><i class="fas fa-check"></i> Personalizado ou cores lisas</li>
-                            <li><i class="fas fa-check"></i> Perfeito para brindes</li>
-                            <li><i class="fas fa-check"></i> Grandes quantidades</li>
+                            <li><i class="fas fa-check"></i> Corte a laser exclusivo</li>
+                            <li><i class="fas fa-check"></i> Estampa 100% personalizada</li>
+                            <li><i class="fas fa-check"></i> Design único da sua marca</li>
                         </ul>
-                        <div class="produto-actions">
-                            <button class="btn-produto cpf-action">
-                                <i class="fas fa-shopping-cart"></i>
-                                Comprar
-                            </button>
-                            <button class="btn-produto cnpj-action" style="display: none;">
-                                <i class="fas fa-calculator"></i>
-                                Orçar
-                            </button>
-                        </div>
                     </div>
                 </div>
 
-                <div class="produto-card" data-product-id="mousepad-70x30" data-price="39.90">
+                <div class="produto-card" data-product-id="linha-propria">
                     <div class="produto-image">
-                        <img src="imagens/MP BRANCO M.png" alt="Mousepad 70x30cm" class="produto-img">
+                        <img src="imagens/23.png" alt="Linha Própria PersonaPad" class="produto-img">
                     </div>
                     <div class="produto-info">
-                        <h3>Mousepad 70 x 30 cm</h3>
-                        <p>Ideal para linha gamer ou escritório, oferecendo máximo conforto e precisão</p>
+                        <h3>Linha Própria PersonaPad</h3>
+                        <p>Acervo de artes próprias em PDF que é encaminhado ao cliente após o atendimento</p>
                         <ul class="produto-features">
-                            <li><i class="fas fa-check"></i> Personalizado ou cores lisas</li>
-                            <li><i class="fas fa-check"></i> Linha gamer/escritório</li>
-                            <li><i class="fas fa-check"></i> Máxima precisão</li>
+                            <li><i class="fas fa-check"></i> Artes exclusivas PersonaPad</li>
+                            <li><i class="fas fa-check"></i> Catálogo em PDF</li>
+                            <li><i class="fas fa-check"></i> Designs profissionais</li>
                         </ul>
-                        <div class="produto-actions">
-                            <button class="btn-produto cpf-action">
-                                <i class="fas fa-shopping-cart"></i>
-                                Comprar
-                            </button>
-                            <button class="btn-produto cnpj-action" style="display: none;">
-                                <i class="fas fa-calculator"></i>
-                                Orçar
-                            </button>
-                        </div>
                     </div>
                 </div>
 
-                <div class="produto-card custom" data-product-id="mousepad-custom" data-price="0">
+                <div class="produto-card" data-product-id="linha-xfire">
                     <div class="produto-image">
-                        <div class="mousepad-preview custom-size">
-                            <i class="fas fa-ruler-combined"></i>
-                            <span>Tamanho Personalizado</span>
-                        </div>
+                        <img src="imagens/24-20.jpg" alt="Linha Xfire Brasil" class="produto-img">
                     </div>
                     <div class="produto-info">
-                        <h3>Tamanhos Personalizados</h3>
-                        <p>Produzimos outros tamanhos sob medida conforme necessidade do cliente</p>
+                        <h3>Linha Xfire Brasil</h3>
+                        <p>Linha pronta, custo-benefício e pronta entrega</p>
                         <ul class="produto-features">
-                            <li><i class="fas fa-check"></i> Qualquer dimensão</li>
-                            <li><i class="fas fa-check"></i> Projeto exclusivo</li>
-                            <li><i class="fas fa-check"></i> Consultoria incluída</li>
+                            <li><i class="fas fa-check"></i> Linha pronta para entrega</li>
+                            <li><i class="fas fa-check"></i> Melhor custo-benefício</li>
+                            <li><i class="fas fa-check"></i> Entrega imediata</li>
                         </ul>
-                        <div class="produto-actions">
-                            <button class="btn-produto">
-                                <i class="fas fa-comments"></i>
-                                Consultar
-                            </button>
-                        </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="produtos-cta">
+                <button class="btn-atendente">
+                    <i class="fab fa-whatsapp"></i>
+                    Falar com Atendente
+                </button>
             </div>
         </div>
     </section>
@@ -288,14 +314,6 @@
                     </div>
                     <h3>Personalização Total</h3>
                     <p>Criamos mousepads únicos com sua marca, logo ou design, alinhados perfeitamente à identidade visual da sua empresa.</p>
-                </div>
-                
-                <div class="diferencial">
-                    <div class="diferencial-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Preço Justo</h3>
-                    <p>Oferecemos os melhores preços do mercado sem comprometer a qualidade, com condições especiais para grandes volumes.</p>
                 </div>
             </div>
         </div>
@@ -343,6 +361,108 @@
         </div>
     </section>
 
+    <!-- Avaliações Section -->
+    <section id="avaliacoes" class="section avaliacoes">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Depoimentos reais de quem confia na PersonaPad</p>
+            </div>
+            
+            <div class="avaliacoes-grid">
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"Uso mousepad grande para jogar e nunca encontrei um tão confortável. A textura é perfeita para movimentos rápidos e a impressão da estampa é incrível. Virou parte do meu setup."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Fernanda Oliveira</strong>
+                        <span>Gamer e Streamer</span>
+                    </div>
+                </div>
+
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"A Personapad nos surpreendeu com a qualidade dos mousepads da linha Xfire. Entrega rápida, ótimo atendimento e os colaboradores amaram receber o brinde da empresa. Já estamos no terceiro pedido."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Mariana Souza</strong>
+                        <span>Coordenadora de Marketing | Agência Criativa</span>
+                    </div>
+                </div>
+
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"Além da estampa perfeita, o que mais me impressionou foi a durabilidade. O mouse desliza com precisão e a base não escorrega. Recomendo para qualquer empresa que valorize qualidade."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Carlos Mendes</strong>
+                        <span>Analista de TI | Startup de Tecnologia</span>
+                    </div>
+                </div>
+
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"Precisávamos de um fornecedor confiável para grandes quantidades, e encontramos!! Preço justo, personalização impecável e entrega dentro do prazo. Ganhou nossa confiança."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Ana Ribeiro</strong>
+                        <span>Compradora | Indústria de Alimentos</span>
+                    </div>
+                </div>
+
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"Trabalho com revenda há anos e nunca tive tanta facilidade com vocês, produto que não dá defeito, ótimo custo benefício e embalagens bem feitas. Os clientes pedem mais porque realmente gostam da qualidade."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Roberto Lima</strong>
+                        <span>Revendedor | Loja de Informática</span>
+                    </div>
+                </div>
+
+                <div class="avaliacao-card">
+                    <div class="avaliacao-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="avaliacao-texto">"Encomendamos mousepads personalizados para toda a equipe. Ficaram lindos, com a logo bem destacada e acabamento de primeira. Deu um ar profissional ao escritório. Atendimento nota 10."</p>
+                    <div class="avaliacao-autor">
+                        <strong>Eduardo Santos</strong>
+                        <span>Gerente Administrativo | Escritório de Consultoria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contato Section -->
     <section id="contato" class="section contato">
         <div class="container">
@@ -359,8 +479,8 @@
                         </div>
                         <div>
                             <h3>WhatsApp</h3>
-                            <p>(11) 98852-7514</p>
-                            <a href="https://wa.me/5511988527514" class="contato-link">Iniciar Conversa</a>
+                            <p>(11) 97349-7047</p>
+                            <a href="https://wa.me/5511973497047" class="contato-link">Iniciar Conversa</a>
                         </div>
                     </div>
                     
@@ -379,7 +499,7 @@
                 <div class="contato-cta">
                     <h3>Produzimos com agilidade, qualidade e total compromisso com a sua marca.</h3>
                     <div class="cta-buttons">
-                        <a href="https://wa.me/5511988527514" class="btn-cta primary">
+                        <a href="https://wa.me/5511973497047" class="btn-cta primary">
                             <i class="fab fa-whatsapp"></i>
                             Falar no WhatsApp
                         </a>
@@ -398,17 +518,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>PersonaPad</h3>
-                    <p>Onde sua marca apoia cada clique</p>
+                    <div class="footer-logo">
+                        <img src="imagens/logo monocromatico.png" alt="PersonaPad Logo" class="footer-logo-img">
+                        <h3>PersonaPad</h3>
+                    </div>
+                    <p class="footer-slogan">Onde sua marca apoia cada clique</p>
+                    <p class="footer-description">Especializada na produção de mousepads personalizados e lisos, com foco em empresas, revendedores e escritórios em todo o Brasil.</p>
                 </div>
                 
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>Produtos</h4>
+                        <h4>Nossas Linhas</h4>
                         <ul>
-                            <li><a href="#produtos">Mousepad 22x20cm</a></li>
-                            <li><a href="#produtos">Mousepad 70x30cm</a></li>
-                            <li><a href="#produtos">Tamanhos Personalizados</a></li>
+                            <li><a href="#produtos">Linha Personalizados</a></li>
+                            <li><a href="#produtos">Linha Própria PersonaPad</a></li>
+                            <li><a href="#produtos">Linha Xfire Brasil</a></li>
                         </ul>
                     </div>
                     
@@ -424,59 +548,59 @@
                     <div class="footer-column">
                         <h4>Contato</h4>
                         <ul>
-                            <li><a href="https://wa.me/5511988527514">WhatsApp</a></li>
-                            <li><span class="footer-email">personapad.contato@gmail.com</span></li>
+                            <li>
+                                <a href="https://wa.me/5511973497047" class="footer-contact-item">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>(11) 97349-7047</span>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="footer-contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>personapad.contato@gmail.com</span>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
                         <h4>Redes Sociais</h4>
                         <ul>
-                            <li><a href="https://www.instagram.com/personapadoficial/" target="_blank">Instagram</a></li>
-                            <li><a href="https://www.tiktok.com/@personapadoficial?_t=ZM-8zPAmA73isg&_r=1" target="_blank">TikTok</a></li>
+                            <li>
+                                <a href="https://www.instagram.com/personapadoficial/" target="_blank" class="footer-social-item">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@personapadoficial" target="_blank" class="footer-social-item">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span>TikTok</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 PersonaPad. Todos os direitos reservados.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 PersonaPad. Todos os direitos reservados.</p>
+                    <div class="footer-stats">
+                        <span>1000+ Empresas Atendidas</span>
+                        <span>50k+ Mousepads Produzidos</span>
+                        <span>24h Entrega SP</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h3><i class="fas fa-shopping-cart"></i> Meu Carrinho</h3>
-                <button class="cart-close" id="closeCart">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be dynamically inserted here -->
-            </div>
-            <div class="cart-footer" id="cartFooter">
-                <div class="cart-total">
-                    <span>Total: </span>
-                    <span id="cartTotal">R$ 0,00</span>
-                </div>
-                <div class="cart-actions">
-                    <button class="cart-btn secondary" id="clearCart">
-                        <i class="fas fa-trash"></i>
-                        Limpar Carrinho
-                    </button>
-                    <button class="cart-btn primary" id="checkoutCart">
-                        <i class="fas fa-credit-card"></i>
-                        Finalizar Compra
-                    </button>
-                </div>
-            </div>
-        </div>
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <i class="fab fa-whatsapp"></i>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
