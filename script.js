@@ -3,12 +3,12 @@ let currentClientType = 'cpf';
 
 // Mensagens personalizadas para WhatsApp
 const whatsappMessages = {
-    cpf: "Olá 👋, quero comprar um mousepad Personapad para uso pessoal. Pode me ajudar?",
-    cnpj: "Olá 👋, sou de uma empresa e gostaria de fazer um orçamento de mousepads. Pode me ajudar?"
+    cpf: " Olá, quero conhecer os modelos de mousepads da Personapad e fazer minha primeira compra. Pode me mostrar as opções disponíveis e me explicar as vantagens?",
+    cnpj: " Olá, sou de uma empresa e gostaria de conhecer os modelos de mousepads da Personapad para avaliar um pedido corporativo. Pode me mostrar as opções e condições especiais para empresas?"
 };
 
 // Número do WhatsApp
-const whatsappNumber = "5511973497047";
+const whatsappNumber = "5511988527514";
 
 // Inicialização quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", function() {
@@ -339,7 +339,7 @@ if (btnAtendente) {
             message = "Olá 👋, sou de uma empresa e gostaria de fazer um orçamento de mousepads. Pode me ajudar?";
         }
         
-        const whatsappUrl = `https://wa.me/5511973497047?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/5511988527514?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 }
