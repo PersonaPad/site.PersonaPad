@@ -3,8 +3,8 @@ let currentClientType = 'cpf';
 
 // Mensagens personalizadas para WhatsApp
 const whatsappMessages = {
-    cpf: " Olá, quero conhecer os modelos de mousepads da Personapad e fazer minha primeira compra. Pode me mostrar as opções disponíveis e me explicar as vantagens?",
-    cnpj: " Olá, sou de uma empresa e gostaria de conhecer os modelos de mousepads da Personapad para avaliar um pedido corporativo. Pode me mostrar as opções e condições especiais para empresas?"
+    cpf: "Olá, quero conhecer os modelos de mousepads da Personapad e fazer minha primeira compra. Pode me mostrar as opções disponíveis e me explicar as vantagens?",
+    cnpj: "Olá, sou de uma empresa e gostaria de conhecer os modelos de mousepads da Personapad para avaliar um pedido corporativo. Pode me mostrar as opções e condições especiais para empresas?"
 };
 
 // Número do WhatsApp
@@ -26,16 +26,9 @@ function initializeClientSelector() {
     
     clientButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Remove active class from all buttons
             clientButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
             this.classList.add('active');
-            
-            // Update current client type
             currentClientType = this.dataset.client;
-            
-            // Update button visibility and text
             updateButtonsForClientType();
         });
     });
@@ -80,15 +73,20 @@ function initializeWhatsAppButtons() {
             openWhatsApp(productName);
         });
     });
-    
-    // Botões CTA no hero (excluindo o botão CTA da seção de vídeo)
+
+    // Botão específico da seção "Nossas Linhas"
+    const nossasLinhasBtn = document.querySelector('.btn-nossas-linhas');
+    if (nossasLinhasBtn) {
+        nossasLinhasBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openWhatsApp(); // usa a mensagem do tipo de cliente atual
+        });
+    }
+
+    // Botões CTA no hero (exceto o do vídeo)
     const ctaButtons = document.querySelectorAll(".hero-cta .cta-btn");
     ctaButtons.forEach(button => {
-        if (button.classList.contains("primary") || button.classList.contains("secondary")) {
-            button.addEventListener("click", function() {
-                openWhatsApp();
-            });
-        } else if (button.classList.contains("outline")) {
+        if (button.classList.contains("primary") || button.classList.contains("secondary") || button.classList.contains("outline")) {
             button.addEventListener("click", function() {
                 openWhatsApp();
             });
@@ -130,7 +128,6 @@ function openWhatsApp(productName = '') {
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
     window.open(whatsappUrl, '_blank');
 }
 
@@ -189,162 +186,21 @@ function initializeMobileMenu() {
     }
 }
 
-// Animações de entrada para elementos
+// Animações de entrada
 function initializeAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
+            if (entry.isIntersecting) entry.target.classList.add('animate-in');
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     
-    // Observar elementos para animação
     const animateElements = document.querySelectorAll('.produto-card, .diferencial, .avaliacao-card, .logistica-item');
     animateElements.forEach(el => observer.observe(el));
 }
 
-// Inicializar animações quando a página carregar
 window.addEventListener('load', initializeAnimations);
 
-// Função para mostrar notificações (caso necessário no futuro)
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            document.body.removeChild(notification);
-        }, 300);
-    }, 3000);
-}
-
-// Função para validar formulários (caso necessário no futuro)
-function validateForm(form) {
-    const requiredFields = form.querySelectorAll('[required]');
-    let isValid = true;
-    
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            field.classList.add('error');
-            isValid = false;
-        } else {
-            field.classList.remove('error');
-        }
-    });
-    
-    return isValid;
-}
-
-// Função para formatar números de telefone
-function formatPhone(phone) {
-    const cleaned = phone.replace(/\D/g, '');
-    const match = cleaned.match(/^(\d{2})(\d{4,5})(\d{4})$/);
-    
-    if (match) {
-        return `(${match[1]}) ${match[2]}-${match[3]}`;
-    }
-    
-    return phone;
-}
-
-// Função para formatar valores monetários
-function formatCurrency(value) {
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(value);
-}
-
-// Função para detectar dispositivo móvel
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Função para scroll suave para o topo
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-// Event listeners adicionais
-document.addEventListener('keydown', function(e) {
-    // Fechar modais com ESC
-    if (e.key === 'Escape') {
-        const activeModals = document.querySelectorAll('.modal.active');
-        activeModals.forEach(modal => {
-            modal.classList.remove('active');
-        });
-    }
-});
-
-// Prevenção de spam em formulários
-let lastSubmission = 0;
-function preventSpam(callback, delay = 2000) {
-    const now = Date.now();
-    if (now - lastSubmission > delay) {
-        lastSubmission = now;
-        callback();
-    }
-}
-
-// Função para lazy loading de imagens (caso necessário)
-function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-}
-
-// Inicializar lazy loading se houver imagens com data-src
-if (document.querySelectorAll('img[data-src]').length > 0) {
-    initializeLazyLoading();
-}
-
-// Botão Falar com Atendente
-const btnAtendente = document.querySelector('.btn-atendente');
-if (btnAtendente) {
-    btnAtendente.addEventListener('click', function() {
-        const clientType = document.querySelector('.client-selector .active')?.dataset.type || 'cpf';
-        let message;
-        
-        if (clientType === 'cpf') {
-            message = "Olá 👋, quero comprar um mousepad Personapad para uso pessoal. Pode me ajudar?";
-        } else {
-            message = "Olá 👋, sou de uma empresa e gostaria de fazer um orçamento de mousepads. Pode me ajudar?";
-        }
-        
-        const whatsappUrl = `https://wa.me/5511988527514?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    });
-}
-
-// Lógica para o player de vídeo com thumbnail
+// Player de vídeo com thumbnail
 function initializeVideoPlayer() {
     const videoThumbnailWrapper = document.querySelector(".video-thumbnail-wrapper");
     const playButton = document.querySelector(".play-button");
@@ -353,10 +209,8 @@ function initializeVideoPlayer() {
 
     if (videoThumbnailWrapper && playButton && youtubePlayerDiv && videoId) {
         playButton.addEventListener("click", function() {
-            // Oculta a thumbnail e o botão de play
             videoThumbnailWrapper.style.display = "none";
             
-            // Cria o iframe do YouTube e o adiciona ao youtubePlayerDiv
             const iframe = document.createElement("iframe");
             iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
             iframe.setAttribute("frameborder", "0");
@@ -365,18 +219,17 @@ function initializeVideoPlayer() {
             iframe.setAttribute("title", "PersonaPad - Processo de Fabricação");
             
             youtubePlayerDiv.appendChild(iframe);
-            youtubePlayerDiv.style.display = "block"; // Mostra o player do YouTube
+            youtubePlayerDiv.style.display = "block";
         });
     }
 }
 
-// Adicionar evento para o novo botão CTA do vídeo
+// CTA do vídeo
 function initializeVideoCta() {
     const whatsappVideoCta = document.querySelector(".whatsapp-video-cta");
     if (whatsappVideoCta) {
         whatsappVideoCta.addEventListener("click", function() {
-            openWhatsApp(); // Reutiliza a função existente para abrir o WhatsApp
+            openWhatsApp();
         });
     }
 }
-
